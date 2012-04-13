@@ -17,6 +17,22 @@
 
 package com.android.mms;
 
+import java.io.File;
+import java.util.Locale;
+
+import com.android.mms.data.Contact;
+import com.android.mms.data.Conversation;
+import com.android.mms.layout.LayoutManager;
+import com.android.mms.util.DownloadManager;
+import com.android.mms.util.DraftCache;
+import com.android.mms.util.EmojiParser;
+import com.android.mms.drm.DrmUtils;
+import com.android.mms.util.SmileyParser;
+import com.android.mms.util.RateController;
+import com.android.mms.MmsConfig;
+import com.android.mms.transaction.MessagingNotification;
+import com.google.android.mms.MmsException;
+
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -94,6 +110,7 @@ public class MmsApp extends Application {
         RateController.init(this);
         LayoutManager.init(this);
         SmileyParser.init(this);
+        EmojiParser.init(this);
         MessagingNotification.init(this);
     }
 
